@@ -1,8 +1,12 @@
 basic.showIcon(IconNames.Surprised)
-makerbit.connectLcd(32)
-basic.pause(1000)
-makerbit.showStringOnLcd1602("MakerBit", makerbit.position1602(LcdPosition1602.Pos1), 16, TextOption.AlignLeft)
+I2C_LCD1602.LcdInit(32)
+I2C_LCD1602.BacklightOff()
+basic.pause(500)
+I2C_LCD1602.BacklightOn()
+I2C_LCD1602.ShowString("Hello", 0, 0)
+I2C_LCD1602.ShowString("test", 0, 1)
+basic.pause(500)
 basic.showIcon(IconNames.Happy)
 basic.forever(function () {
-	
+    I2C_LCD1602.ShowString("jhgsjdhgfsj", 0, 0)
 })
